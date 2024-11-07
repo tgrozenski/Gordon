@@ -77,11 +77,19 @@ public class testReview {
         // System.out.println("Bulldogs".substring(4));
         // length is not zero based
 
-        String str = "Vacaville";
-        int index = str.indexOf("a");
-        str = str.substring(0,1) + str.substring(index + 3);
-        System.out.println(str);
+        // String str = "Vacaville";
+        // int index = str.indexOf("a");
+        // str = str.substring(0,1) + str.substring(index + 3);
+        // System.out.println(str);
         // we know index is 1
         // indexOf returns the first index where substring in present
+
+        TeaPot myPot = new TeaPot(false);
+
+        boolean ready = myPot.teaReady();
+
+
+        String color = myPot.getTeapotColor();
+        System.out.println(color);
     }
 }
