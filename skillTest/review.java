@@ -1,9 +1,9 @@
+import java.util.*;
+
 public class review {
     public static void main(String args[]) {
-        System.out.println("hello world");
 
-        System.out.println(firstMiddleLast("123456789", "123456789", "123456789"));
-        System.out.println(mangle("physics"));
+    makeFoxList();        
 
     }
     /*
@@ -42,18 +42,68 @@ public class review {
     public static void makeArticleList() {
         Article object = new Article();
         ArrayList<Article> list = new ArrayList<>();
+        // length = 5, 0,1,2,3,4,
+        int tooLong = 5;
+        String interesting = "interesting";
 
         for(int index = 0; index < list.size(); index++)
         {
-        Article a = list.get(index);
-        if(a.getWordCount() > tooLong &&
-            !a.getTopic().equals(interesting))
-        {
-        list.remove(index);
-        index--;
-        }
+            // 0 
+            Article a = list.get(index);
+
+            if (a.getWordCount() > tooLong && !a.getTopic().equals(interesting))
+            {
+            list.remove(index);
+            index--;
+            }
         }
     }
+
+    public static void makeFoxList() {
+        ArrayList<Fox> foxList = new ArrayList<>();
+
+        Fox one = new Fox(2, "orange");
+        Fox two = new Fox(100, "purple");
+        Fox three = new Fox(1, "red");
+        Fox four = new Fox(3, "blue");
+        
+        foxList.add(one);
+        foxList.add(two);
+        foxList.add(three);
+        foxList.add(four);
+        printFoxList(foxList);
+
+        // Loop through the fox list, and remove a fox if it's age is less than 3
+
+        for(int index = 0; index < foxList.size(); index++) {
+            // get the currentFox
+            Fox currentFox = foxList.get(index);
+            if (currentFox.getAge() < 3) 
+            {
+                foxList.remove(index);
+            }
+        }
+
+        printFoxList(foxList);
+    }
+
+    public static void makePokemonList() {
+        /* Given the following two classes, complete the method in the PokemonList class that finds
+        the first Pokemon on the list that has the same type but lower hit points and replaces it with
+        the parameter at the same location on the list. The method should return true if it replaces a
+        Pokemon and false otherwise. */
+    }
+
+    public static void printFoxList(ArrayList<Fox> foxList) {
+        for(int index = 0; index < foxList.size(); index++) {
+            Fox currentFox = foxList.get(index);
+            
+            System.out.println(currentFox);
+        }
+        System.out.println("***LIST DONE***");
+    }
+
+    
 
 
 }

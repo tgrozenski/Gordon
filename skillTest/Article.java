@@ -1,5 +1,8 @@
 class Article {
-    
+
+    String topic = "fantasy";
+    int wordCount = 100;
+
     public Article() {
         System.out.println("Made an Object");
     }
